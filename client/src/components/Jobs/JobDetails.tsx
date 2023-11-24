@@ -1,0 +1,70 @@
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import moment from 'moment';
+
+import Loader from '../Utils/Loader';
+import { State } from '../../interfaces/store';
+import { getPostById } from '../../actions/posts';
+import NotFound from '../Utils/NotFound';
+import UserImg from '../../images/user.png';
+
+const JobDetails = () => {
+    const { id } = useParams();
+    const dispatch: any = useDispatch();
+
+    useEffect(() => {
+        document.title = "Job Details - JobMagnet";
+        dispatch(getPostById(id || ""));
+    }, []);
+
+    const { isLoading, selectedPost } = useSelector((state: State) => state.posts);
+
+    if (isLoading) return <Loader />
+    if (!selectedPost) return <NotFound />
+
+    return (
+        <div className='max-w-3xl mx-auto py-10'>
+            <header>
+                <div className='flex justify-between items-center'>
+                    <Link to={`/profile/${selectedPost?.creator?.id}`} className='flex items-center gap-2 text-textcolor hover:text-primary'>
+                        <img src={UserImg} className='h-8 w-8 object-cover border-x border-t border-solid border-grey' alt="" />
+                        <h3 className='font-medium'>{selectedPost?.creator?.name}</h3>
+                    </Link>
+                    <div className='text-right pb-2 text-textcolor text-sm'>{`${moment(selectedPost?.createdAt).format('lll')} (${moment(selectedPost?.createdAt).fromNow()})`}</div>
+                </div>
+                <h1 className='border-y border-solid border-grey px-3 py-2 font-medium text-center text-xl text-textcolor'>{selectedPost?.title}</h1>
+            </header>
+            <main>
+                <p className='py-4 px-3 text-md text-center'>{selectedPost?.description}</p>
+                <div className='text-center text-textcolor text-sm mb-4'>
+                    {selectedPost?.tags?.map((tag: string) => ` #${tag}`)}
+                </div>
+                <div className='border-y border-solid border-grey px-3 py-2'>
+                    <ul className='flex justify-between items-center'>
+                        <li className='text-center'>
+                            <div className='font-medium'>12K</div>
+                            <i className="fa-solid fa-eye text-xl text-grey"></i>
+                            <div className='text-textcolor'>Views</div>
+                        </li>
+                        <li className='text-center'>
+                            <div className='font-medium'>280</div>
+                            <i className="fa-solid fa-check-to-slot text-xl text-grey"></i>
+                            <div className='text-textcolor'>Submissions</div>
+                        </li>
+                        <li className='text-center'>
+                            <div className='font-medium'>17</div>
+                            <i className="fa-solid fa-mug-hot text-xl text-grey"></i>
+                            <div className='text-textcolor'>Recruiting</div>
+                        </li>
+                    </ul>
+                </div>
+                <div className='text-center mt-5'>
+                    <button className='border border-solid border-grey rounded-md px-5 py-2 hover:text-primary'>Post my expertise</button>
+                </div>
+            </main>
+        </div>
+    )
+}
+
+export default JobDetails;
