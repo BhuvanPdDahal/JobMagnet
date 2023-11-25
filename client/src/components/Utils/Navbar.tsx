@@ -26,8 +26,8 @@ const Navbar = () => {
                         </div>
                         <div className='flex gap-3 items-center'>
                             {user && <Link to={`/profile/${user._id}`}><img className='h-12 w-12 cursor-pointer rounded-full object-cover' src={PlainProfile} alt="profile" /></Link>}
-                            <Link to='/login' className='px-4 py-2 rounded-md text-lg border border-solid border-secondary text-textcolor'>Log in</Link>
-                            <Link to='/signup' className='px-4 py-2 bg-secondary rounded-md text-lg text-white'>Sign up</Link>
+                            <Link to='/login' className='px-4 py-2 rounded-md text-lg border border-solid border-secondary text-textcolor transition-navtext duration-300 hover:bg-grey'>Log in</Link>
+                            <Link to='/signup' className='px-4 py-2 bg-secondary rounded-md text-lg text-white transition-navtext duration-300 hover:bg-grey'>Sign up</Link>
                         </div>
                     </nav>
                 </div>
