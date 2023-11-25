@@ -64,17 +64,17 @@ const Auth: React.FC = () => {
                         <div className='flex gap-10 mt-10 mb-6'>
                             <div className='w-full'>
                                 <label htmlFor="firstName" className='text-md text-textcolor'>First Name</label>
-                                <input onChange={handleChange} type="text" name='firstName' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id='firstName' required />
+                                <input onChange={handleChange} type="text" name='firstName' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id='firstName' required />
                             </div>
                             <div className='w-full'>
                                 <label htmlFor="lastName" className='text-md text-textcolor'>Last Name</label>
-                                <input onChange={handleChange} type="text" name='lastName' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id='lastName' required />
+                                <input onChange={handleChange} type="text" name='lastName' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id='lastName' required />
                             </div>
                         </div>
                         {userType === 'freelancer' && (
                             <div className='mb-6'>
                                 <label htmlFor="skills" className='text-md text-textcolor'>Skills (Eg: developer, writer, designer)</label>
-                                <input onChange={handleChange} type="text" name='skills' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id='skills' required />
+                                <input onChange={handleChange} type="text" name='skills' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id='skills' required />
                             </div>
                         )}
                     </>
@@ -82,16 +82,16 @@ const Auth: React.FC = () => {
 
                 <div className='mb-6'>
                     <label htmlFor="email" className='text-md text-textcolor'>Email</label>
-                    <input onChange={handleChange} type="email" name='email' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id='email' required />
+                    <input onChange={handleChange} type="email" name='email' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id='email' required />
                 </div>
                 <div className='mb-6'>
                     <label htmlFor="password" className='text-md text-textcolor'>Password</label>
-                    <input onChange={handleChange} type="password" name='password' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id='password' required />
+                    <input onChange={handleChange} type="password" name='password' className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id='password' required />
                 </div>
                 {isSignup && (
                     <div className='mb-6'>
                         <label htmlFor="continent" className='text-md text-textcolor'>Continent</label>
-                        <select onChange={handleChange} name="continent" defaultValue={"Asia"} className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey' id="continent">
+                        <select onChange={handleChange} name="continent" defaultValue={"Asia"} className='w-full outline-none text-lg px-4 py-2 rounded-md border border-solid border-grey focus:border-primary' id="continent">
                             <option value="Africa">Africa</option>
                             <option value="Asia">Asia</option>
                             <option value="Australia">Australia</option>
