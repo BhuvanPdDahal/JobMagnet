@@ -45,7 +45,7 @@ const UserType: React.FC = () => {
                     <input ref={freelancerInput} type="radio" className='h-8 w-8' name='user-type' />
                 </div>
             </div>
-            <button onClick={handleBtnClick} className={`py-3 text-xl rounded-md ${userType ? "bg-primary" : "bg-blue-300"} w-full mt-5 text-white`} disabled={!userType}>{isSignup ? "Create account" : "Login to account"}</button>
+            <button onClick={handleBtnClick} className={`py-3 text-xl rounded-md transition-bg duration-200 ${userType ? "bg-primary hover:bg-blue-800" : "bg-blue-300"} w-full mt-5 text-white`} disabled={!userType}>{isSignup ? "Create account" : "Login to account"}</button>
         </div>
     )
 }

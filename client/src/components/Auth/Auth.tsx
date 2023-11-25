@@ -101,14 +101,14 @@ const Auth: React.FC = () => {
                         </select>
                     </div>
                 )}
-                <button className='w-full text-white bg-primary rounded-md py-2 text-lg mb-3' type="submit">
+                <button className={`w-full text-white bg-primary rounded-md py-2 text-lg mb-3 transition-bg duration-200 ${isLoading ? 'bg-blue-300 cursor-wait' : 'hover:bg-blue-800'}`} type="submit">
                     {isSignup
                         ? isLoading ? "Creating your account..." : "Create my account"
                         : isLoading ? "Logging in to your account..." : "Login to my account"
                     }
                 </button>
             </form>
-            <button className='w-full border border-solid border-grey rounded-md py-2 text-lg' onClick={handleClick}>{isSignup ? "Already have an account? Login" : "Don't have an account? Signup"}</button>
+            <button className='w-full border border-solid border-grey rounded-md py-2 text-lg transition-bg duration-200 hover:bg-grey' onClick={handleClick}>{isSignup ? "Already have an account? Login" : "Don't have an account? Signup"}</button>
         </div>
     )
 }

@@ -30,6 +30,7 @@ module.exports = {
         "grey": "#ccc",
       },
       transitionProperty: {
+        "bg": "background-color",
         "navtext": "color background-color"
       }
     },
