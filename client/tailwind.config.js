@@ -29,8 +29,8 @@ module.exports = {
         "dimblack": "rgba(0, 0, 0, 0.22)",
         "grey": "#ccc",
       },
-      "backgroundImage": {
-        // "footer-img": "url('./src/images/typing.jpg')",
+      transitionProperty: {
+        "navtext": "color"
       }
     },
   },
