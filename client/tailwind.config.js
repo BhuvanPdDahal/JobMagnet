@@ -31,7 +31,11 @@ module.exports = {
       },
       transitionProperty: {
         "bg": "background-color",
-        "navtext": "color background-color"
+        "navtext": "color background-color",
+        "searchbar": "border-radius",
+      },
+      borderRadius: {
+        "100px": "100px",
       }
     },
   },

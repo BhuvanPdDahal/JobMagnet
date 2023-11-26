@@ -48,8 +48,8 @@ const Freelancers = () => {
     return (
         <div className='p-10 max-w-3xl mx-auto'>
             <div className='flex justify-center mb-5'>
-                <input onKeyDown={handleKeyDown} onChange={(e) => setSearchValue(e.target.value)} value={searchValue} className='w-350px border text-lg border-solid rounded-l-lg border-grey outline-none px-5 py-3' type="text" placeholder={`Search freelancers by ${searchType}`} />
-                <select className='outline-none text-lg border-y border-r rounded-r-lg px-3 border-solid border-grey' value={searchType} onChange={(e) => setSearchType(e.target.value)}>
+                <input onKeyDown={handleKeyDown} onChange={(e) => setSearchValue(e.target.value)} value={searchValue} className='w-350px border text-lg border-solid border-grey outline-none px-5 py-3 transition-searchbar duration-200 rounded-l-100px focus:rounded-l-lg' type="text" placeholder={`Search freelancers by ${searchType}`} />
+                <select className='outline-none text-lg border-y border-r px-3 border-solid border-grey transition-searchbar duration-200 rounded-r-100px focus:rounded-r-lg' value={searchType} onChange={(e) => setSearchType(e.target.value)}>
                     <option value="tag">Tag</option>
                     <option value="email">Email</option>
                     <option value="name">Name</option>
