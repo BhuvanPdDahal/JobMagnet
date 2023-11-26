@@ -12,14 +12,12 @@ import { PostProp } from '../../interfaces/post';
 import { searchPost } from '../../actions/posts';
 
 const JobPosts: React.FC = () => {
-    const params = useQuery();
     const location = useLocation();
     const dispatch: any = useDispatch();
     const navigate: any = useNavigate();
-    const searchedTitle = params.get("title");
-    const searchedTag = params.get("tag");
-    const value = searchedTitle || searchedTag || '';
-    const type = (searchedTag && 'tag') || 'title';
+    const { title, tag } = useQuery();
+    const value = title || tag || '';
+    const type = (tag && 'tag') || 'title';
     const [searchType, setSearchType] = useState(type);
     const [searchValue, setSearchValue] = useState(value);
 

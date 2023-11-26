@@ -9,16 +9,13 @@ import { getAllUsers, searchUser } from '../../actions/auth';
 import { State } from '../../interfaces/store';
 import Unaccessable from '../Utils/Unaccessable';
 
-const Freelancers = () => {
-    const params = useQuery();
+const Freelancers: React.FC = () => {
     const location = useLocation();
     const dispatch: any = useDispatch();
     const navigate: any = useNavigate();
-    const searchedName = params.get("name");
-    const searchedTag = params.get("tag");
-    const searchedEmail = params.get("email");
-    const value = searchedName || searchedEmail || searchedTag || '';
-    const type = (searchedName && 'name') || (searchedEmail && 'email') || 'tag';
+    const { name, tag, email } = useQuery();
+    const value = name || email || tag || '';
+    const type = (name && 'name') || (email && 'email') || 'tag';
     const [searchType, setSearchType] = useState(type);
     const [searchValue, setSearchValue] = useState(value);
 
