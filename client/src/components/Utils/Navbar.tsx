@@ -20,8 +20,8 @@ const Navbar = () => {
                         </Link>
                         <div>
                             <ul className='flex items-center gap-10 text-xl text-textcolor'>
-                                <li className={`${location.pathname.includes('/jobs') ? 'text-primary font-medium' : 'hover:text-grey'} transition-navtext duration-300`}><Link to="/jobs"><i className="fa-solid fa-briefcase"></i> Find Work</Link></li>
-                                <li className={`${location.pathname.includes('/freelancers') ? 'text-primary font-medium' : 'hover:text-grey'} transition-navtext duration-300`}><Link to="/freelancers"><i className="fa-solid fa-graduation-cap"></i> Find Freelancers</Link></li>
+                                <li className={`${location.pathname.includes('/jobs') ? 'text-primary' : 'hover:text-grey'} transition-navtext duration-300`}><Link to="/jobs"><i className="fa-solid fa-briefcase"></i> Find Work</Link></li>
+                                <li className={`${location.pathname.includes('/freelancers') ? 'text-primary' : 'hover:text-grey'} transition-navtext duration-300`}><Link to="/freelancers"><i className="fa-solid fa-graduation-cap"></i> Find Freelancers</Link></li>
                             </ul>
                         </div>
                         <div className='flex gap-3 items-center'>
