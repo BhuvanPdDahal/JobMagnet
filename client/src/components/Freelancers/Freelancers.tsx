@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import Loader from '../Utils/Loader';
+import Freelancer from './Freelancer';
 import useQuery from '../../hooks/useQuery';
 import { getAllUsers, searchUser } from '../../actions/auth';
-import Freelancer from './Freelancer';
 import { State } from '../../interfaces/store';
-import Loader from '../Utils/Loader';
 import Unaccessable from '../Utils/Unaccessable';
 
 const Freelancers = () => {
