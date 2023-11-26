@@ -13,12 +13,26 @@ const JobDetails: React.FC = () => {
     const { id } = useParams();
     const dispatch: any = useDispatch();
 
+    const handleClick = () => {
+        console.log('Clicked');
+        
+        if(isCurrentUser) {
+            console.log('current user');
+            
+        } else {
+            console.log('different user');
+            
+        }
+    };
+
     useEffect(() => {
         document.title = "Job Details - JobMagnet";
         dispatch(getPostById(id || ""));
     }, []);
 
+    const user = useSelector((state: State) => state.auth)?.authData?.user;
     const { isLoading, selectedPost } = useSelector((state: State) => state.posts);
+    const isCurrentUser = user?._id === selectedPost?.creator?.id;
 
     if (isLoading) return <Loader />
     if (!selectedPost) return <NotFound />
@@ -60,7 +74,11 @@ const JobDetails: React.FC = () => {
                     </ul>
                 </div>
                 <div className='text-center mt-5'>
-                    <button className='border border-solid border-grey rounded-md px-5 py-2 hover:text-primary'>Post my expertise</button>
+                    <button onClick={handleClick} className='border border-solid border-grey rounded-md px-5 py-2 text-textcolor hover:text-primary'>{
+                        isCurrentUser
+                        ? <><i className="fa-solid fa-trash-can"></i> Delete this post</>
+                        : <><i className="fa-solid fa-box"></i> Post my expertise</>
+                    }</button>
                 </div>
             </main>
         </div>

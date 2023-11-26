@@ -22,9 +22,6 @@ const Profile = () => {
     const { isLoading, selectedProfile } = useSelector((state: State) => state.auth);
     const isClient = selectedProfile?.status === 'client';
 
-    console.log('SelectedProfile', selectedProfile);
-
-
     if (isLoading) return <Loader />
     if (!selectedProfile) return <NotFound />
 
