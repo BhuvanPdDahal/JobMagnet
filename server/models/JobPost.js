@@ -27,6 +27,24 @@ const PostSchema = new mongoose.Schema({
             ref: 'User',
             required: true
         }
+    },
+    views: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        }],
+        default: []
+    },
+    submissions: {
+        type: Number,
+        default: 0
+    },
+    recruiting: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        }],
+        default: []
     }
 });
 
