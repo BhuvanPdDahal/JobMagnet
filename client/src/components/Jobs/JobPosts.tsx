@@ -62,7 +62,9 @@ const JobPosts: React.FC = () => {
                         description={post.description}
                         creator={post.creator}
                         tags={post.tags}
+                        views={post.views}
                         createdAt={post.createdAt}
+                        createdByCurrentUser={post.creator.id === user._id}
                     />)
                 ) : (
                     <div className="text-center text-xl text-textcolor mt-10">No related job posts</div>

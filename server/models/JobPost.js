@@ -31,7 +31,7 @@ const PostSchema = new mongoose.Schema({
     views: {
         type: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'User'
         }],
         default: []
     },
@@ -42,7 +42,7 @@ const PostSchema = new mongoose.Schema({
     recruiting: {
         type: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'User'
         }],
         default: []
     }

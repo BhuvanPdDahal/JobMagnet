@@ -19,11 +19,13 @@ export interface PostProp {
     title: string,
     description: string,
     tags: string[],
+    views: ObjectId[],
     createdAt: string,
     creator: {
         name: string,
         id: ObjectId
-    }
+    },
+    createdByCurrentUser: boolean
 }
 
 export interface PostAction {

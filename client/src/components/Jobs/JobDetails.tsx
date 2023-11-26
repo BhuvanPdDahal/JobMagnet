@@ -9,7 +9,7 @@ import { getPostById } from '../../actions/posts';
 import NotFound from '../Utils/NotFound';
 import UserImg from '../../images/user.png';
 
-const JobDetails = () => {
+const JobDetails: React.FC = () => {
     const { id } = useParams();
     const dispatch: any = useDispatch();
 
@@ -33,7 +33,7 @@ const JobDetails = () => {
                     </Link>
                     <div className='text-right pb-2 text-textcolor text-sm'>{`${moment(selectedPost?.createdAt).format('lll')} (${moment(selectedPost?.createdAt).fromNow()})`}</div>
                 </div>
-                <h1 className='border-y border-solid border-grey px-3 py-2 font-medium text-center text-xl text-textcolor'>{selectedPost?.title}</h1>
+                <h1 className='border-y border-solid border-grey px-3 py-2 font-medium text-center text-md text-textcolor'>{selectedPost?.title}</h1>
             </header>
             <main>
                 <p className='py-4 px-3 text-md text-center'>{selectedPost?.description}</p>
@@ -43,7 +43,7 @@ const JobDetails = () => {
                 <div className='border-y border-solid border-grey px-3 py-2'>
                     <ul className='flex justify-between items-center'>
                         <li className='text-center'>
-                            <div className='font-medium'>12K</div>
+                            <div className='font-medium'>{selectedPost?.views?.length}</div>
                             <i className="fa-solid fa-eye text-xl text-grey"></i>
                             <div className='text-textcolor'>Views</div>
                         </li>

@@ -52,10 +52,16 @@ const getAllPosts = async (req, res) => {
 
 const getPostById = async (req, res) => {
     try {
+        const { userId } = req;
         const { id } = req.params;
         if(!ObjectId.isValid(id)) return res.status(404).json({ message: "Post not found" });
         const post = await JobPost.findById(id);
         if(!post) return res.status(404).json({ message: "Post not found" });
+        const alreadyViewed = post.views.find((view) => view.toString() === userId);
+        if(!alreadyViewed) {
+            post.views.push(userId);
+            await post.save();
+        }
         res.status(200).json(post);
 
     } catch (error) {
