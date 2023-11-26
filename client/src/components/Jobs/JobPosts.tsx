@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import Post from './JobPost';
 import Loader from '../Utils/Loader';
+import useQuery from '../../hooks/useQuery'
 import Unaccessable from '../Utils/Unaccessable';
 import { getAllPosts } from '../../actions/posts';
 import { State } from '../../interfaces/store';
@@ -11,11 +12,10 @@ import { PostProp } from '../../interfaces/post';
 import { searchPost } from '../../actions/posts';
 
 const JobPosts: React.FC = () => {
+    const params = useQuery();
     const location = useLocation();
-    const search = location.search;
     const dispatch: any = useDispatch();
     const navigate: any = useNavigate();
-    const params = new URLSearchParams(search);
     const searchedTitle = params.get("title");
     const searchedTag = params.get("tag");
     const value = searchedTitle || searchedTag || '';

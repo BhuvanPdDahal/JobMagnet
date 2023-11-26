@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import useQuery from '../../hooks/useQuery';
 import { getAllUsers, searchUser } from '../../actions/auth';
 import Freelancer from './Freelancer';
 import { State } from '../../interfaces/store';
@@ -9,11 +10,10 @@ import Loader from '../Utils/Loader';
 import Unaccessable from '../Utils/Unaccessable';
 
 const Freelancers = () => {
+    const params = useQuery();
     const location = useLocation();
-    const search = location.search;
     const dispatch: any = useDispatch();
     const navigate: any = useNavigate();
-    const params = new URLSearchParams(search);
     const searchedName = params.get("name");
     const searchedTag = params.get("tag");
     const searchedEmail = params.get("email");

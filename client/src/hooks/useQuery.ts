@@ -1,7 +1,10 @@
-import React from 'react'
+import { useLocation } from "react-router-dom";
 
 const useParams = () => {
-  return 0;
+    const location = useLocation();
+    const search = location.search;
+    const params = new URLSearchParams(search);
+    return params;
 }
 
 export default useParams;
