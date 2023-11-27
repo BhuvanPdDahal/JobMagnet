@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
 import Loader from '../Utils/Loader';
@@ -12,6 +12,7 @@ import UserImg from '../../images/user.png';
 const JobDetails: React.FC = () => {
     const { id } = useParams();
     const dispatch: any = useDispatch();
+    const navigate: any = useNavigate();
 
     const handleClick = () => {
         console.log('Clicked');
@@ -21,7 +22,7 @@ const JobDetails: React.FC = () => {
             
         } else {
             console.log('different user');
-            
+            navigate(`/jobs/${id}/post`);
         }
     };
 

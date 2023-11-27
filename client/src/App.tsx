@@ -18,6 +18,7 @@ import { State } from './interfaces/store';
 import JobForm from './components/Jobs/JobForm';
 import NotFound from './components/Utils/NotFound';
 import Freelancers from './components/Freelancers/Freelancers';
+import ExpertiseForm from './components/Jobs/ExpertiseForm';
 
 function App() {
     const alert = useSelector((state: State) => state.alert);
@@ -35,6 +36,7 @@ function App() {
                         <Route path=':id' element={<JobDetails />} />
                         <Route path='create' element={<JobForm />} />
                         <Route path='search' element={<JobPosts />} />
+                        <Route path=':id/post' element={<ExpertiseForm />} />
                     </Route>
                     <Route path='/freelancers/*'>
                         <Route index element={<Freelancers />} />
