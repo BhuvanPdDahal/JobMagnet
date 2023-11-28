@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <>
             {!isSigning && (
-                <div className='shadow-normal sticky top-0 w-full bg-white z-10'>
+                <div className='shadow-nav sticky top-0 w-full bg-white z-10'>
                     <nav className='flex items-center justify-between mx-auto py-1 px-3 max-w-7xl'>
                         <Link to='/'>
                             <img className='h-100px' src={Logo} alt="JobMagnet" />

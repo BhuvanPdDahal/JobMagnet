@@ -22,7 +22,7 @@ const JobDetails: React.FC = () => {
             
         } else {
             console.log('different user');
-            navigate(`/jobs/${id}/post`);
+            navigate(`/jobs/${id}/apply`);
         }
     };
 
@@ -78,7 +78,7 @@ const JobDetails: React.FC = () => {
                     <button onClick={handleClick} className='border border-solid border-grey rounded-md px-5 py-2 text-textcolor hover:text-primary'>{
                         isCurrentUser
                         ? <><i className="fa-solid fa-trash-can"></i> Delete this post</>
-                        : <><i className="fa-solid fa-box"></i> Post my expertise</>
+                        : <><i className="fa-solid fa-box"></i> Apply for the job</>
                     }</button>
                 </div>
             </main>

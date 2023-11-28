@@ -19,8 +19,8 @@ module.exports = {
         "450px": "450px",
       },
       "boxShadow": {
-        'normal': '0 3px 6px -1px rgb(0 0 0 / 0.25)',
-        'error': '0 3px 4px -1px rgb(0 0 0 / 0.18), 0 2px 4px -2px rgb(0 0 0 / 0.18), 0 -2px 4px -2px rgb(0 0 0 / 0.18)',
+        'nav': '0 3px 6px -1px rgb(0 0 0 / 0.25)',
+        'normal': '0 3px 4px -1px rgb(0 0 0 / 0.18), 0 2px 4px -2px rgb(0 0 0 / 0.18), 0 -2px 4px -2px rgb(0 0 0 / 0.18)',
       },
       "colors": {
         "primary": "#295ca3",
@@ -36,6 +36,9 @@ module.exports = {
       },
       borderRadius: {
         "100px": "100px",
+      },
+      backgroundImage: {
+        'form-bg': "url('/src/images/form-bg.avif')",
       }
     },
   },

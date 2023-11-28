@@ -36,7 +36,7 @@ function App() {
                         <Route path=':id' element={<JobDetails />} />
                         <Route path='create' element={<JobForm />} />
                         <Route path='search' element={<JobPosts />} />
-                        <Route path=':id/post' element={<ExpertiseForm />} />
+                        <Route path=':id/apply' element={<ExpertiseForm />} />
                     </Route>
                     <Route path='/freelancers/*'>
                         <Route index element={<Freelancers />} />
