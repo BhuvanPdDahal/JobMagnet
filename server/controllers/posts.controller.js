@@ -85,6 +85,7 @@ const updatePost = async (req, res) => {
         res.status(500).json({ message: "Something went wrong" });
     }
 };
+
 const deletePost = async (req, res) => {
     try {
         const { userId } = req;
@@ -100,4 +101,25 @@ const deletePost = async (req, res) => {
     }
 };
 
-module.exports = { createPost, searchPost, getAllPosts, getPostById, updatePost, deletePost };
+const applyForJob = async (req, res) => {
+    try {
+        const { userId } = req;
+        const { id: postId } = req.params;
+        const { heading, description } = req.body;
+        const post = await JobPost.findById(postId);
+        if(!post) return res.status(404).json({ message: "Post not found" });
+        if(post.creator.id.toString() === userId) return res.status(403).json({ message: "Not allowed" });
+        const user = await User.findById(userId);
+        if(!user) return res.status(404).json({ message: "User not found" });
+        const newSubmission = { id: user._id, name: `${user.firstName} ${user.lastName}`, heading, description };
+        post.submissions.push(newSubmission);
+        await post.save();
+        res.status(200).json({ message: "Mail sent successfully" });
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({ message: "Something went wrong" });
+    }
+};
+
+module.exports = { createPost, searchPost, getAllPosts, getPostById, updatePost, deletePost, applyForJob };

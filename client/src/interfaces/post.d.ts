@@ -14,6 +14,11 @@ export interface JobPostProp {
     tags: string[]
 }
 
+export interface Mail {
+    heading: string,
+    description: string
+}
+
 export interface PostProp {
     _id: ObjectId,
     title: string,

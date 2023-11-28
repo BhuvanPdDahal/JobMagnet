@@ -14,6 +14,7 @@ export const CREATE_POST = "CREATE_POST";
 export const SEARCH_POST = "SEARCH_POST";
 export const GET_ALL_POSTS = "GET_ALL_POSTS";
 export const GET_POST_BY_ID = "GET_POST_BY_ID";
+export const APPLY_FOR_JOB = "APPLY_FOR_JOB";
 export const REMOVE_SELECTED_POST = "REMOVE_SELECTED_POST";
 
 export const SHOW_ALERT = "SHOW_ALERT";

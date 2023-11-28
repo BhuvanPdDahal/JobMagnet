@@ -54,8 +54,8 @@ const JobPosts: React.FC = () => {
                 </select>
             </div>
             <div className='border-t border-solid border-grey'>
-                {posts.length ? (
-                    posts.map((post: PostProp) => <Post
+                {posts?.length ? (
+                    posts?.map((post: PostProp) => <Post
                         key={post._id}
                         _id={post._id}
                         title={post.title}

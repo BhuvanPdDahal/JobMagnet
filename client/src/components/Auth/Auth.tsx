@@ -84,7 +84,6 @@ const Auth: React.FC = () => {
                             )}
                         </>
                     )}
-
                     <div className='mb-3'>
                         <label htmlFor="email" className='text-sm text-textcolor'>Email</label>
                         <input onChange={handleChange} type="email" name='email' className='w-full outline-none px-3 py-2 rounded-md border border-solid border-grey focus:border-primary' id='email' required />

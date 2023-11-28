@@ -1,7 +1,7 @@
 import { PostAction } from "../interfaces/post";
 import { START_LOADING, END_LOADING, CREATE_POST, SEARCH_POST, GET_ALL_POSTS, GET_POST_BY_ID, REMOVE_SELECTED_POST } from '../constants/actionTypes';
 
-const postReducer = (state = { posts: [], isLoading: true }, action: PostAction) => {
+const postReducer = (state = { posts: [], isLoading: false }, action: PostAction) => {
     switch (action.type) {
         case START_LOADING:
             return { ...state, isLoading: true };

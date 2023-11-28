@@ -36,8 +36,13 @@ const PostSchema = new mongoose.Schema({
         default: []
     },
     submissions: {
-        type: Number,
-        default: 0
+        type: [{
+            id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+            name: { type: String, required: true },
+            heading: { type: String, required: true },
+            description: { type: String, required: true }
+        }],
+        default: []
     },
     recruiting: {
         type: [{

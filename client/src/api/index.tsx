@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { FormDataProp } from '../interfaces/auth';
-import { JobForm } from '../interfaces/post';
+import { JobForm, Mail } from '../interfaces/post';
 
 const API = axios.create({ baseURL: 'http://localhost:5000/api' });
 
@@ -28,3 +28,4 @@ export const getAllPosts = () => API.get('/posts');
 export const getAllUsers = () => API.get('/users');
 export const getPostById = (id: string) => API.get(`/posts/${id}`);
 export const searchPost = (searchFor: string, value: string) => API.get(`/posts/search?${searchFor}=${value}`);
+export const applyForJob = (id: string, mail: Mail) => API.post(`/posts/${id}`, mail);
